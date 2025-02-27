@@ -1,0 +1,35 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+def plot_kitchen_path():
+    max_x, max_y = 12, 8 
+    gcd_step = 4  # GCD of 10 and 15
+    
+    fig, ax = plt.subplots(figsize=(6, 6))
+    ax.set_xticks(np.arange(0, max_x+1, 5))
+    ax.set_yticks(np.arange(0, max_y+1, 5))
+    ax.grid(True, linestyle='--', linewidth=0.5)
+    
+    x_steps = np.arange(0, max_x+1, 12)
+    y_steps = np.arange(0, max_y+1, 8)
+    
+    for x in x_steps:
+        ax.plot([x, x], [0, max_y], 'r--', label='12-unit step' if x == 0 else "")
+    for y in y_steps:
+        ax.plot([0, max_x], [y, y], 'b--', label='8-unit step' if y == 0 else "")
+    
+    gcd_x = np.arange(0, max_x+1, gcd_step)
+    gcd_y = np.arange(0, max_y+1, gcd_step)
+    for i, x in enumerate(gcd_x):
+        for j, y in enumerate(gcd_y):
+            ax.plot(x, y, 'go', markersize=4, label='Optimized step' if (i == 0 and j == 0) else "")
+    
+    ax.set_xlabel('X Position')
+    ax.set_ylabel('Y Position')
+    ax.set_title('Most efficent way to tile a 12x8 Kitchen floor using GCD - green points are square pattern corners')
+    ax.legend()
+    
+    # Show plot
+    plt.show()
+
+plot_kitchen_path()
