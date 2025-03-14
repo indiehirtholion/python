@@ -44,7 +44,7 @@ def animate_archimedes(max_sides=96):
         
         xs, ys = zip(*points)
         ax.plot(xs, ys, 'b-')
-        ax.plot(0, 0, 'ro')  # Center
+        ax.plot(0, 0, 'ro')  
         
         ax.annotate('', xy=(1, 0), xytext=(0, 0), arrowprops=dict(arrowstyle='->', color='g'))
         ax.text(0.5, -0.1, "Radius", ha='center', va='center', fontsize=8)
