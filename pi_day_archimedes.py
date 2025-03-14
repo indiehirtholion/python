@@ -8,7 +8,7 @@ def archimedes_pi(sides):
     angle = 360.0 / sides
     half_angle_rad = math.radians(angle / 2.0)
     perimeter = sides * math.sin(half_angle_rad) * 2.0
-    return perimeter / 2.0  # Approximates pi
+    return perimeter / 2.0  
 
 def animate_archimedes(max_sides=96):
     frames = []
@@ -40,7 +40,7 @@ def animate_archimedes(max_sides=96):
             y = math.sin(theta)
             points.append((x, y))
             
-        points.append(points[0])  # Close the polygon
+        points.append(points[0]) 
         
         xs, ys = zip(*points)
         ax.plot(xs, ys, 'b-')
