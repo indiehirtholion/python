@@ -10,8 +10,8 @@ num_samples = 700
 means = []  
 sns.set(style="whitegrid")
 fig, ax = plt.subplots(figsize=(8, 6))
-ax.set_xlim(20, 80)  # X-axis limits
-ax.set_ylim(0, 100)  # Y-axis limits
+ax.set_xlim(20, 80)  
+ax.set_ylim(0, 100)   
 ax.set_title("Demonstrating Central Limit Theorem", fontsize=14)
 ax.set_xlabel("Sample Mean")
 ax.set_ylabel("Frequency")
@@ -21,7 +21,7 @@ def update(frame):
     sample_mean = np.mean(sample)  
     means.append(sample_mean)  
     
-    ax.clear()  # Clear previous frame
+    ax.clear()   
     sns.histplot(means, bins=30, kde=True, color="blue", ax=ax)  
     
     if len(means) > 1:
